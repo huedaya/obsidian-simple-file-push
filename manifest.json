@@ -1,0 +1,10 @@
+{
+	"id": "simple-file-push",
+	"name": "Simple File Push",
+	"version": "0.0.1",
+	"minAppVersion": "0.15.0",
+	"description": "Simple file push blog plugin",
+	"author": "Kim Hudaya",
+	"authorUrl": "https://github.com/huedaya",
+	"isDesktopOnly": false
+}
