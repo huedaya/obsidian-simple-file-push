@@ -4,7 +4,6 @@ import { Lazy, pipe } from "fp-ts/lib/function";
 import * as TE from "fp-ts/lib/TaskEither";
 import {
 	App,
-	FileSystemAdapter,
 	Notice,
 	Plugin,
 	PluginSettingTab,
@@ -28,8 +27,6 @@ export default class FilePublisher extends Plugin {
 
 	async onload() {
 		await this.loadSettings();
-
-		const adapter = this.app.vault.adapter as FileSystemAdapter;
 
 		this.registerEvent(
 			this.app.workspace.on("file-menu", (menu, file) => {
