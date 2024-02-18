@@ -4,12 +4,14 @@ Obsidian plugin that simply push markdown file to POST endpoint. <br/>
 Forked from https://github.com/yiglas/obsidian-file-publisher
 
 ## Server side
-You must provide simple POST API endpoint that able to receive this following `multipart/form-data` data:
+You must provide a simple POST API endpoint that is able to receive the following `JSON` data:
+```json
+{
+    "file_name": "{{will be filled with file name}}"
+    "content": "{{will be filled with file content}}"
+}
 ```
-file_name: {{will be filled with file name}}
-content: {{will be filled with file content}}
-```
-The API protected by Bearer Authorization `Bearer YOUR_TOKEN`. 
+The API must be protected by Bearer Authorization `Bearer YOUR_TOKEN`. 
 
 ## Plugin Settings
 - Enter the POST endpoint URL (eg. https://huedaya.com/api/obsidian-blog/sync)
@@ -19,8 +21,10 @@ The API protected by Bearer Authorization `Bearer YOUR_TOKEN`.
 Simply click on the Note and select `Sync file to my Blog`
 
 ## Debug
-- If the request fail, please open the developer window
+- If the request fails, please open the developer window `View > Toggle Developer Tools`.
 
 ## Todo
-- [ ] Able to read meta data like title
 - [ ] Create repo for the server side sample
+
+## Support
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/huedya)
