@@ -1,6 +1,6 @@
 {
 	"name": "simple-file-push",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "Push Markdown file to API endpoint.",
 	"main": "main.js",
 	"scripts": {

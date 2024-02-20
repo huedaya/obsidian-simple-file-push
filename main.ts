@@ -94,9 +94,6 @@ const publishFile =
 						headers: {
 							"Authorization": "Bearer " + token,
 						},
-					}).then((r) => {
-						console.log('Return data:')
-						console.log(r);
 					})
 				)
 			),
@@ -106,13 +103,10 @@ const publishFile =
 const log =
 	(msg: string) =>
 	<A>(a: A) => {
-		console.log(msg);
 		return a;
 		};
 
 const notify = (e: Error | undefined, msg: string) => {
-	console.log(msg);
-
 	if (e) {
 		console.error(e);
 	}
@@ -132,8 +126,6 @@ class FilePublisherTab extends PluginSettingTab {
 		const { containerEl } = this;
 
 		containerEl.empty();
-
-		containerEl.createEl("h3", { text: "Plugin Settings" });
 
 		new Setting(containerEl)
 			.setName("Publisher URL")
