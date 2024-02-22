@@ -1,0 +1,31 @@
+name: Check Code 
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Check:
+    name: Check 🔎
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    env:
+      IMAGE_PREFIX: prod-
+    steps:
+      - name: Get latest code 🚚
+        uses: actions/checkout@v3
+
+      - name: Send Last Update Info 📡
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: '${{ secrets.UPDATE_API_ENDPOINT }}'
+          method: 'POST'
+          customHeaders: |
+            {
+              "Content-Type": "application/json"
+            }
+          data: |
+            {
+              "project_slug": "obsidian_simple_push"
+            }
