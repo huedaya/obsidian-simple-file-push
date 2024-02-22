@@ -9,9 +9,7 @@ jobs:
   Check:
     name: Check 🔎
     runs-on: ubuntu-latest
-    timeout-minutes: 4
-    env:
-      IMAGE_PREFIX: prod-
+    timeout-minutes: 1
     steps:
       - name: Get latest code 🚚
         uses: actions/checkout@v3
